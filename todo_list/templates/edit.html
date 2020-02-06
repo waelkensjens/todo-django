@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}
+Edit
+{% endblock %}
+
+{% block content %}
+    {% if item %}
+
+
+<form method="POST">
+    {% csrf_token %}
+  <div class="form-group">
+
+    <input type="text" class="form-control" placeholder="{{item.item}}" name="item" value="{{item.item}}" >
+
+  </div>
+
+  <button type="submit" class="btn btn-primary">Edit item</button>
+</form>
+    {% endif %}
+{% endblock %}
